@@ -47,6 +47,7 @@ public class TimeFormatting {
                 formattingStr = (String) selected;
             }
         });
+
         // Example of connecting a listener to a timer (java.swing.Timer)
         Timer timer = new Timer(1000, actionEvent
                 -> label.setText(new SimpleDateFormat(formattingStr, Locale.US).format(new Date())));

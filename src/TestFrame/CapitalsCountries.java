@@ -13,7 +13,6 @@ public class CapitalsCountries {
     public CapitalsCountries() {
         label = new JLabel("");
         label.setHorizontalAlignment(JLabel.CENTER);
-        //comboBox = new JComboBox(country);
         comboBox.setSelectedIndex(0);
 
         comboBox.addActionListener(actionEvent
@@ -21,7 +20,7 @@ public class CapitalsCountries {
 
         JFrame frame = new JFrame("Capitals of countries");
         frame.setLayout(new FlowLayout());
-        frame.setSize(200, 100);
+        frame.setSize(250, 100);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         label.setText(capitals[0]);
         frame.add(comboBox);
