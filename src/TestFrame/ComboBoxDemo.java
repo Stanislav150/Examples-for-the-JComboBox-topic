@@ -24,6 +24,7 @@ public class ComboBoxDemo {
             }
         });
 
+
         //Set up the picture.
         picture = new JLabel();
         updateLabel(dogs[comboBox.getSelectedIndex()]);
