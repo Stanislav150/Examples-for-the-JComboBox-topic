@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ComboBoxDemo {
+public class ComboBoxDemo extends JFrame{
     String[] dogs = {"Corgi", "Dog", "Hound", "Lapdog"};
 
     private final JLabel picture;
@@ -13,28 +13,27 @@ public class ComboBoxDemo {
     private final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(dogs);
 
     public ComboBoxDemo() {
+        super("Parade dogs");
         comboBox = new JComboBox<>(model);
-        comboBox.setSelectedIndex(1);
+        comboBox.setSelectedIndex(0);
         comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 updateLabel(dogs[comboBox.getSelectedIndex()]);
-                System.out.println("User has selected an item " +
-                                   "from the combo box.");
             }
         });
-
 
         //Set up the picture.
         picture = new JLabel();
         updateLabel(dogs[comboBox.getSelectedIndex()]);
-        JFrame frame = new JFrame("Parade dogs");
-        frame.setLayout(new FlowLayout());
-        frame.setSize(290, 320);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(comboBox);
-        frame.add(picture);
-        frame.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(310, 340);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        add(comboBox);
+        add(picture);
+        setVisible(true);
     }
 
     protected void updateLabel(String name) {

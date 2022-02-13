@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class TimeFormatting {
+public class TimeFormatting extends JFrame{
 
     String[] patterns = {
             "dd.MM.yyyy HH:mm:ss",
@@ -20,6 +20,7 @@ public class TimeFormatting {
     private final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(patterns);
 
     TimeFormatting() {
+        super("Current date and time");
         label = new JLabel("00:00:00");
         label.setHorizontalAlignment(JLabel.CENTER);
         comboBox = new JComboBox<>(model);
@@ -52,14 +53,29 @@ public class TimeFormatting {
         Timer timer = new Timer(1000, actionEvent
                 -> label.setText(new SimpleDateFormat(formattingStr, Locale.US).format(new Date())));
 
-        JFrame frame = new JFrame("Current date and time");
-        frame.setLayout(new FlowLayout());
-        frame.setSize(270, 100);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(comboBox);
-        frame.add(label);
+
+        setLayout(new FlowLayout());
+        setSize(300, 100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        add(comboBox);
+        add(label);
         timer.start();
-        frame.setVisible(true);
+        setVisible(true);
+
+        /*
+        setLayout(new FlowLayout());
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(null);
+        setResizable(false);
+        label.setText(capitals[0]);
+        add(comboBox);
+        add(label);
+        setVisible(true);
+         */
     }
 
     public static void main(String[] args) {
