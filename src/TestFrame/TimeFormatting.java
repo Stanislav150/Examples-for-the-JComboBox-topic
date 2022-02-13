@@ -17,11 +17,12 @@ public class TimeFormatting {
     private final JComboBox<String> comboBox;
     private String formattingStr = patterns[0];
     private int selectedIndex;
+    private final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(patterns);
 
     TimeFormatting() {
         label = new JLabel("00:00:00");
         label.setHorizontalAlignment(JLabel.CENTER);
-        comboBox = new JComboBox<>(patterns);
+        comboBox = new JComboBox<>(model);
         //Making the combobox editable
         comboBox.setEditable(true);
         comboBox.addActionListener(actionEvent -> {

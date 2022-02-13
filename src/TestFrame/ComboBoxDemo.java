@@ -10,9 +10,10 @@ public class ComboBoxDemo {
 
     private final JLabel picture;
     private final JComboBox<String> comboBox;
+    private final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(dogs);
 
     public ComboBoxDemo() {
-        comboBox = new JComboBox<>(dogs);
+        comboBox = new JComboBox<>(model);
         comboBox.setSelectedIndex(1);
         comboBox.addActionListener(new ActionListener() {
             @Override
