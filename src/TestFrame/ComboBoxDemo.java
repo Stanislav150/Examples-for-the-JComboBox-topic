@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ComboBoxDemo extends JFrame{
+public class ComboBoxDemo extends JFrame {
     String[] dogs = {"Corgi", "Dog", "Hound", "Lapdog"};
 
     private final JLabel picture;
@@ -16,9 +16,11 @@ public class ComboBoxDemo extends JFrame{
         super("Parade dogs");
         comboBox = new JComboBox<>(model);
         comboBox.setSelectedIndex(0);
+        // Connecting a listener
         comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                //When a new element is selected, the label handler is called
                 updateLabel(dogs[comboBox.getSelectedIndex()]);
             }
         });
@@ -52,7 +54,7 @@ public class ComboBoxDemo extends JFrame{
      */
     protected static ImageIcon createImageIcon(String path) {
         String imgURL = ComboBoxDemo.class.getClassLoader().getResource(path).getPath();
-      if (imgURL != null) {
+        if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
             System.err.println("Couldn't find file: " + path);

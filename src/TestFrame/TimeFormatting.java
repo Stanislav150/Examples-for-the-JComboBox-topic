@@ -63,19 +63,6 @@ public class TimeFormatting extends JFrame{
         add(label);
         timer.start();
         setVisible(true);
-
-        /*
-        setLayout(new FlowLayout());
-        setSize(300, 150);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(null);
-        setResizable(false);
-        label.setText(capitals[0]);
-        add(comboBox);
-        add(label);
-        setVisible(true);
-         */
     }
 
     public static void main(String[] args) {
